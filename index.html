@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0d10">
+  <meta name="description" content="PACKET//ZERO — Learn cybersecurity from first principles to advanced security through visual lessons, safe simulations and tactical challenges.">
+  <meta property="og:title" content="PACKET//ZERO — Cybersecurity Field School">
+  <meta property="og:description" content="A free, interactive cybersecurity learning game. 3D networks, OWASP 2025, labs, explanations, and progress tracking.">
+  <title>PACKET//ZERO — Cybersecurity Field School</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell" id="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="PACKET ZERO home"><span class="brand-mark"><span></span><span></span><span></span><span></span></span><span class="brand-word">PACKET<span class="brand-slash">//</span>ZERO<small>CYBERSECURITY FIELD SCHOOL</small></span></a>
+      <div class="sidebar-section">FIELD MANUAL <span>01 / 04</span></div>
+      <nav id="nav">
+        <a class="nav-link" href="#home" data-route="home"><span class="nav-icon">⌂</span> Command deck</a>
+        <a class="nav-link" href="#worlds" data-route="worlds"><span class="nav-icon">▦</span> Learning worlds <span class="mini-count" id="world-count">09</span></a>
+        <a class="nav-link" href="#labs" data-route="labs"><span class="nav-icon">⌘</span> Simulation lab</a>
+        <a class="nav-link" href="#review" data-route="review"><span class="nav-icon">◈</span> Recall deck</a>
+        <a class="nav-link" href="#sources" data-route="sources"><span class="nav-icon">↗</span> Source library</a>
+      </nav>
+      <div class="sidebar-section second">CAMPAIGN STATUS <span>LIVE / LOCAL</span></div>
+      <div class="sidebar-progress"><div class="small-row"><span>Course completion</span><b id="side-percent">0%</b></div><div class="progress-track"><span id="side-progress" style="width:0%"></span></div><div class="small-row muted"><span id="side-lessons">0 / 0 missions</span><span>SECURE</span></div></div>
+      <div class="side-foot"><div class="side-foot-icon">PZ</div><div><b>Local-first progress</b><small>Saved in this browser · no account</small></div></div>
+    </aside>
+    <div class="content-column">
+      <header class="topbar"><div class="breadcrumb" id="breadcrumb"><span class="dim">SYSTEM</span> <span class="crumb-sep">/</span> COMMAND DECK</div><div class="top-actions"><button class="top-search" id="search-btn" aria-label="Search lessons"><span>⌕</span> <span class="hide-small">Find a concept</span><kbd>/</kbd></button><div class="top-divider"></div><div class="xp-chip"><span>✳</span><b id="xp-total">0</b> XP</div><div class="avatar">OP</div></div></header>
+      <main id="app" aria-live="polite"></main>
+      <footer class="footer"><span>PACKET//ZERO <span class="accent">■</span> FIELD SCHOOL / BUILD 01</span><span>SIMULATIONS ONLY. TRAIN ETHICALLY.</span></footer>
+    </div>
+  </div>
+  <dialog id="search-dialog" class="search-dialog"><div class="dialog-top"><span>⌕</span><input id="search-input" type="search" aria-label="Search concepts" placeholder="Search a concept, threat or technique..." autocomplete="off"><button id="search-close" aria-label="Close search">ESC</button></div><div id="search-results" class="search-results"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="content.js"></script>
+  <script src="lab-data.js"></script>
+  <script src="network.js"></script>
+  <script src="diagrams.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
