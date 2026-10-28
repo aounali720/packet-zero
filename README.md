@@ -18,24 +18,16 @@ Then visit `http://localhost:8000`.
 
 ## Publish on GitHub Pages
 
-1. Create a **public** GitHub repository named `packet-zero` (or any name).
-2. Upload **all the files in this folder** into the repository's root, including `index.html`, `content.js`, `app.js`, `lab-data.js`, `network.js`, `diagrams.js`, `style.css`, `favicon.svg`, and `.nojekyll`.
-3. Go to your repository **Settings → Pages → Build and deployment**.
-4. Select **Deploy from a branch**, then **main**, and **/(root)**. Save.
-5. The site will appear at `https://YOUR-USERNAME.github.io/packet-zero/` once GitHub finishes deploying.
+This repository includes [a GitHub Actions deployment workflow](.github/workflows/pages.yml) that publishes the game automatically from `main` with no build tools.
 
-Or, if Git and GitHub CLI (`gh`) are installed and authenticated:
+1. Open [Settings → Pages](https://github.com/aounali720/packet-zero/settings/pages).
+2. Under **Build and deployment → Source**, choose **GitHub Actions** (not `Deploy from a branch`).
+3. Open the [Actions tab](https://github.com/aounali720/packet-zero/actions/workflows/pages.yml). The workflow runs on pushes to `main` and can also be launched using **Run workflow**.
+4. After a successful deployment, visit **https://aounali720.github.io/packet-zero/**.
 
-```bash
-cd packet-zero
-git init
-git add .
-git commit -m "Build PACKET ZERO cybersecurity field school"
-git branch -M main
-gh repo create packet-zero --public --source=. --remote=origin --push
-```
+If the website returns 404, check the workflow run and confirm that the repository's Pages source is set to **GitHub Actions**. GitHub Pages site settings must be enabled by an authorized repository administrator; committing a workflow alone may not activate the site.
 
-Then enable Pages in Settings. No bundler and no build command are required.
+The workflow publishes only the site's HTML, CSS, JavaScript and favicon, with a `.nojekyll` marker. All simulations run in the browser; there is no backend or API token.
 
 ## Learning design
 
